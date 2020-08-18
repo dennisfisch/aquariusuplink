@@ -1,0 +1,120 @@
+server:
+  port: 8080
+
+logging:
+  level:
+    root: INFO
+    org.springframework.web: INFO
+    org.springframework.security: INFO
+    org.springframework.security.oauth2: INFO
+
+spring:
+  thymeleaf:
+    cache: false
+  security:
+    oauth2:
+      client:
+        registration:
+          nibe:
+            provider: nibeuplink
+            client-id: id
+            client-secret: secret
+            authorization-grant-type: authorization_code
+            redirect-uri: "{baseUrl}/authorized"
+            client-authentication-method: post
+            scope: READSYSTEM
+        provider:
+          nibeuplink:
+            authorization-uri: https://api.nibeuplink.com/oauth/authorize
+            token-uri: https://api.nibeuplink.com/oauth/token
+
+aquariusuplink:
+  base-uri: https://api.nibeuplink.com
+  parameters:
+    divideBy10Ids:
+      - 40067
+      - 40014
+    divideBy100Ids:
+      - 100
+    additionalParameters:
+      - 48132
+      - 10100
+      - 47011
+      - 48739
+      - 47343
+      - 47260
+      - 10011
+    friendlyNameByIds:
+      40067: "avg. outdoor temp"
+      40014: "hot water charging"
+      40013: "hot water top"
+      40004: "outdoor temp."
+      40083: "current"
+      40081: "current"
+      40079: "current"
+      43005: "degree minutes"
+      43161: "external adjustment"
+      47276: "floor drying function"
+      43009: "calculated flow temp."
+      40071: "external flow temp."
+      40008: "heat medium flow"
+      40012: "return temp."
+      40033: "room temperature"
+      44270: "calculated flow temp."
+      10033: "blocked"
+      47214: "fuse size"
+      43081: "time factor"
+      43084: "electrical addition power"
+      47212: "set max electrical add."
+      40121: "addition temperature"
+      44302: "cooling, compr. only."
+      44308: "heating, compr. only."
+      44300: "heating, int. add. incl."
+      44306: "hotwater, compr. only."
+      44298: "hw, incl. int. add"
+      44304: "pool, compr. only."
+      40072: "flow"
+      47411: "AUX1"
+      47410: "AUX2"
+      47409: "AUX3"
+      47408: "AUX4"
+      47407: "AUX5"
+      47412: "X7"
+      40942: "external blocking"
+      40311: "fan speed"
+      40312: "fan speed"
+      40025: "exhaust air"
+      40026: "extract air"
+      40183: "outdoor temp."
+      40075: "supply air"
+      48745: "country"
+      44703: "defrosting"
+      44396: "pump speed heating medium"
+      44362: "outdoor temp."
+      10014: "blocked"
+      44069: "compressor starts"
+      44866: "current"
+      44058: "condenser out"
+      44363: "evaporator"
+      41167: "evaporator"
+      41163: "High pressure"
+      44059: "hot gas"
+      41164: "injection"
+      44060: "liquid line"
+      41162: "Low pressure"
+      44055: "return temp."
+      44061: "suction gas"
+      44699: "high pressure sensor"
+      44071: "compressor operating time"
+      44073: "compressor operating time hot water"
+      40737: "compressor run time cooling"
+      44701: "current compr. frequency"
+      40782: "requested compressor freq"
+      41002: "fan speed"
+      48132: "hot water mode"
+      10100: "hot water mode time remaining"
+      47011: "heating adjustment"
+      48739: "cooling adjustment"
+      47343: "cooling start degree minute"
+      47260: "ventilation mode"
+      10011: "ventilaton mode remaining"
